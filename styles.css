@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+
+:root {
+    --primary-color: #FF6B6B;
+    --primary-color-hover: scale-color($primary-color, $lightness: 32%);
+    --header-text-color: #403f3f;
+    --container-color: #F1F4F5;
+    --navbar-color: #f1f4f5ac;
+}
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: var(--container-color);
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--navbar-color);
+    color: var(--navbar-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+nav h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+nav ul li a {
+    color: var(--header-text-color);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: var(--header-text-color) 0.3s;
+}
+nav ul li a:hover {
+    background-color: var(--header-text-color);
+}
+
+
+/* Section Styling */
+.section {
+    padding: 100px 20px;
+    margin-top: 60px; /* Offset for fixed nav */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--container-color);
+}
+.section:nth-child(even) {
+    background-color: var(--container-color);
+}
+
+/* Section Content */
+.section h2 {
+    font-size: 2.5em;
+    color: var(--header-text-color);
+    margin-bottom: 20px;
+}
+.section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Specific Section Styles */
+.skills-list, .projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+}
+.skills-list li, .projects-list li {
+    background-color: var(--header-text-color);
+    color: var(--container-color);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: var(--container-color);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+body {
+    color: #768390;
+    background: var(--container-color);
+    font-family: "Effra", Helvetica, sans-serif;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: #3D4351;
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif; /* Ensure headings also use Montserrat */
+    font-weight: 700; /* Optional: Set a bold font weight for headings */
+    
+}
+a {
+    color: var(--primary-color);
+    &:hover {
+        color: var(--primary-color-hover);
+        text-decoration: none;
+    }
+}
+.example-header {
+    background: #3D4351;
+    color: var(--container-color);
+    font-weight: 300;
+    padding: 3em 1em;
+    text-align: center;
+    h1 {
+        color: var(--container-color);
+        font-weight: 300;
+        margin-bottom: 20px
+    }
+    p {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 700;
+    }
+}
+.container-fluid {
+    .row {
+        padding: 0 0 4em 0;
+        &:nth-child(even) {
+            background: var(--container-color);
+        }
+    }
+}
+
+.example-title {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 3em 0;
+    border-bottom: 1px solid var(--container-color);
+    p {
+        margin: 0 auto;
+        font-size: 16px;
+        max-width: 400px;
+    }
+}
+
+/*==================================
+    TIMELINE
+==================================*/
+
+    /*-- GENERAL STYLES
+    ------------------------------*/
+    .timeline {
+        line-height: 1.4em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        h1, h2, h3, h4, h5, h6 {
+            line-height: inherit;
+        }
+    }
+
+    /*----- TIMELINE ITEM -----*/
+
+    .timeline-item {
+        padding-left: 40px;
+        position: relative;
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+
+    /*----- TIMELINE INFO -----*/
+
+    .timeline-info {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin: 0 0 .5em 0;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+    /*----- TIMELINE MARKER -----*/
+
+    .timeline-marker {
+        position: absolute;
+        top: 0; bottom: 0; left: 0;
+        width: 15px;
+        &:before {
+            background: var(--primary-color);
+            border: 3px solid transparent;
+            border-radius: 100%;
+            content: "";
+            display: block;
+            height: 15px;
+            position: absolute;
+            top: 4px; left: 0;
+            width: 15px;
+            transition: var(--primary-color) 0.3s ease-in-out,
+                    border 0.3s ease-in-out;
+        }
+        &:after {
+            content: "";
+            width: 2px;
+            background: var(--header-text-color);
+            display: block;
+            position: absolute;
+            top: 24px; bottom: 0; left: 6px;
+        }
+        .timeline-item:last-child &:after {
+            content: none;
+        }
+    }
+    .timeline-item:not(.period):hover .timeline-marker:before {
+        background: transparent;
+        border: 3px solid var(--primary-color);
+    }
+
+    /*----- TIMELINE CONTENT -----*/
+
+    .timeline-content {
+        padding-bottom: 40px;
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    /*----- TIMELINE PERIOD -----*/
+    
+    .period {
+        padding: 0;
+        .timeline-info {
+            display: none;
+        }
+        .timeline-marker {
+            &:before {
+                background: transparent;
+                content: "";
+                width: 15px;
+                height: auto;
+                border: none;
+                border-radius: 0;
+                top: 0;
+                bottom: 30px;
+                position: absolute;
+                border-top: 3px solid var(--container-color);
+                border-bottom: 3px solid var(--container-color);
+            }
+            &:after {
+                content: "";
+                height: 32px;
+                top: auto;
+            }
+        }
+        .timeline-content {
+            padding: 40px 0 70px;
+        }
+        .timeline-title {
+            margin: 0;
+        }
+    }
+
+    /*----------------------------------------------
+        MOD: TIMELINE SPLIT
+    ----------------------------------------------*/
+
+        .timeline-split {
+            @media (min-width: 768px) {
+                .timeline {
+                    display: table;
+                }
+                .timeline-item {
+                    display: table-row;
+                    padding: 0;
+                }
+                .timeline-info,
+                .timeline-marker,
+                .timeline-content,
+                .period .timeline-info {
+                    display: table-cell;
+                    vertical-align: top;
+                }
+                .timeline-marker {
+                    position: relative;
+                }
+                .timeline-content {
+                    padding-left: 30px;
+                }
+                .timeline-info {
+                    padding-right: 30px;
+                }
+                .period .timeline-title {
+                    position: relative;
+                    left: -45px;
+                }
+            }
+        }
+
+    /*----------------------------------------------
+        MOD: TIMELINE CENTERED
+    ----------------------------------------------*/
+
+        .timeline-centered {
+            @extend .timeline-split;
+            @media (min-width: 992px) {
+                &,
+                .timeline-item,
+                .timeline-info,
+                .timeline-marker,
+                .timeline-content {
+                    display: block;
+                    margin: 0;
+                    padding: 0;
+                }
+                .timeline-item {
+                    padding-bottom: 40px;
+                    overflow: hidden;
+                }
+                .timeline-marker {
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -7.5px;
+                }
+                .timeline-info,
+                .timeline-content {
+                    width: 50%;
+                }
+                > .timeline-item:nth-child(odd) .timeline-info {
+                    float: left;
+                    text-align: right;
+                    padding-right: 30px;
+                }
+                > .timeline-item:nth-child(odd) .timeline-content {
+                    float: right;
+                    text-align: left;
+                    padding-left: 30px;
+                }    
+                > .timeline-item:nth-child(even) .timeline-info {
+                    float: right;
+                    text-align: left;
+                    padding-left: 30px;
+                }
+                > .timeline-item:nth-child(even) .timeline-content {
+                    float: left;
+                    text-align: right;
+                    padding-right: 30px;
+                }
+                > .timeline-item.period .timeline-content {
+                    float: none;
+                    padding: 0;
+                    width: 100%;
+                    text-align: center;
+                }
+                .timeline-item.period {
+                    padding: 50px 0 90px;
+                }
+                .period .timeline-marker:after {
+                    height: 30px;
+                    bottom: 0;
+                    top: auto;
+                }
+                .period .timeline-title {
+                    left: auto;
+                }
+            }
+        }

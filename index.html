@@ -3,155 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
-    <style>
-        /* General Reset and Styling */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Helvetica Neue', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
-        }
-
-        /* Full-width header styling */
-        header {
-            background-image: linear-gradient(135deg, #ff5858 0%, #ffc8c8 100%);
-            color: #fff;
-            text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 40px;
-            border-bottom: 5px solid #333;
-        }
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 1.2em;
-        }
-
-        /* Container and Card Styling */
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .card {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 30px;
-            transition: transform 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.02);
-        }
-
-        /* Specific Card Layouts */
-        .about-card h2 {
-            color: #ffc8c8;
-        }
-        .skills-list, .projects-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-        }
-        .skills-list li, .projects-list li {
-            background-color: #ffc8c8;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            margin-top: 40px;
-        }
-    </style>
+    <title>Maja Schermuly | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Maja Schermuly</h1>
-        <p> Software Engineer | Designer | Developer</p>
-    </header>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        <!-- About Me Card -->
-        <div class="card about-card">
-            <h2>About Me</h2>
-            <p>I am an Associate Software Engineer at Charles Schwab, where I implement and maintain API endpoints, and develop automated systems to enhance data throughput and integrity. I graduated with honors from Texas A&M University in 2023 with a Bachelor's in Computer Science and a minor in Business. My thesis focused on using camera Hand Tracking to improve user input recognition in Nemeth Braille. With experience in API development, batch processing, and human-computer interaction, I am passionate about leveraging technology for innovative solutions.</p>
-        </div>
+    <!-- Placeholder for Navbar -->
+    <div id="navbar-placeholder"></div>
 
-        <!-- Skills Card -->
-        <div class="card skills-card">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Python</li>
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-                <li>Java</li>
-                <li>CI/CD</li>
-                <!-- Add more skills as needed -->
-            </ul>
-        </div>
+    <!-- Placeholders for Sections -->
+    <div id="about-placeholder"></div>
+    <div id="skills-placeholder"></div>
+    <div id="projects-placeholder"></div>
+    <div id="experience-placeholder"></div>
+    <div id="education-placeholder"></div>
 
-        <!-- Projects Card -->
-        <div class="card projects-card">
-            <h2>Selected Projects</h2>
-            <ul class="projects-list">
-                <!-- <li>
-                    <h3>Project One</h3>
-                    <p>A web app that allows users to track their habits and visualize their progress. Created with React and Node.js.</p>
-                </li>
-                <li>
-                    <h3>Project Two</h3>
-                    <p>An e-commerce site with a focus on minimalism and user experience. Developed with HTML, CSS, and JavaScript.</p>
-                </li> -->
-                <!-- Add more projects as needed -->
-            </ul>
-        </div>
+    <!-- Placeholder for Footer -->
+    <div id="footer-placeholder"></div>
 
-        <!-- Experience Card -->
-        <div class="card experience-card">
-            <h2>Experience</h2>
-            <div>
-                <h3>Integration Engineer - Charles Schwab</h3>
-                <p>Fill this out</p>
-            </div>
-            <!-- <div>
-                <h3>UI Designer - ABC Agency</h3>
-                <p>Designed engaging interfaces for clients in tech and lifestyle industries, focusing on brand consistency and intuitive navigation.</p>
-            </div> -->
-        </div>
+    <script>
+        // Helper function to load a component from the components folder
+        function loadComponent(componentId, componentFile) {
+    fetch(`components/${componentFile}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${componentFile}: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(data => document.getElementById(componentId).innerHTML = data)
+        .catch(error => {
+            console.error('Error loading component:', error);
+            document.getElementById(componentId).innerHTML = `<p>Sorry, there was an error loading this section.</p>`;
+        });
+}
 
-        <!-- Education Card -->
-        <div class="card education-card">
-            <h2>Education</h2>
-            <p><strong>Bachelor of Science</strong> - Texas A&M University</p>
-            <p></p>
-        </div>
-    </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>Connect with me: LinkedIn | GitHub | Email</p>
-        <p>&copy; 2024 Maja Schermuly</p>
-    </footer>
+        // Load components
+        loadComponent('navbar-placeholder', 'navbar.html');
+        loadComponent('about-placeholder', 'about.html');
+        loadComponent('skills-placeholder', 'skills.html');
+        loadComponent('projects-placeholder', 'projects.html');
+        loadComponent('experience-placeholder', 'experience.html');
+        loadComponent('education-placeholder', 'education.html');
+        loadComponent('footer-placeholder', 'footer.html');
+    </script>
 </body>
 </html>
